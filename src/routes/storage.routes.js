@@ -7,6 +7,19 @@ import {
   createFolder,
 } from "../controllers/storage.controller.js";
 const router = Router();
+
+import path from "node:path"
+router.get("/site", (req, res) => {
+  res.sendFile(path.join(process.cwd() + "/client/dist", "index.html"));
+ //res.send({ message: "listo" });
+
+});
+
+/*
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+   });*/
+
 router.get("/storage", getDirectories);
 
 router.get("/storage/icons", getIcons);
