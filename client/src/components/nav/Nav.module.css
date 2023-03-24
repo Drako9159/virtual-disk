@@ -1,0 +1,17 @@
+.container {
+  background-color: #222831;
+  display: flex;
+}
+.container .firstNav{
+    margin-left: 5px;
+    cursor: pointer;
+    
+    overflow: hidden;
+    
+}
+.container .storageIcon{
+    width: 30px;
+    filter: contrast(1%);
+    padding: 5px;
+    cursor: pointer;
+}

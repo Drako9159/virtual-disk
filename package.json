@@ -11,7 +11,8 @@
   "author": "@drako9159",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "cors": "^2.8.5",

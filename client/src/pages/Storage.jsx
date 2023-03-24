@@ -1,14 +1,13 @@
-import { useEffect } from "react";
-import { getDirectories } from "../api/storages";
-import { useDirectoriesStore } from "../store/storage";
+import Directories from "../components/storage/Directories";
+import Nav from "../components/nav/Nav";
+import Modal from "../components/modal/Modal";
 
 export default function Storage() {
-  const directories = useDirectoriesStore((state) => state.directories);
-  const setDirectories = useDirectoriesStore((state) => state.setDirectories);
-  const aver = ["llol", "lolo"]
-  
-  
-
-
-  return <div>storage</div>;
+  return (
+    <>
+      <Nav />
+      <Modal />
+      <Directories />
+    </>
+  );
 }
