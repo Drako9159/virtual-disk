@@ -1,6 +1,89 @@
-.container{
-    background-color: #f96d00;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container {
+  background-color: #f96d00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container div {
+  display: flex;
+}
+.modalInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 5px;
+  overflow: hidden;
+  width: 200px;
+  background-color: #f2f2f2;
+  margin: 5px;
+  color: #222831;
+}
+.modalInfo .left p {
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.modalInfo button {
+  cursor: pointer;
+}
+.modalInfo .left {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  box-sizing: border-box;
+}
+.modalInfo .left > div {
+  overflow: auto;
+  max-height: 45px;
+  width: 100px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 2;
+}
+.modalInfo .right {
+  display: flex;
+  width: 40%;
+}
+.modalInfo .buttonDownload {
+  background-color: #2484b1ee;
+  color: #ffffff;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonClose {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.modalCreateFolder {
+  padding: 5px;
+}
+
+.modalCreateFolder input {
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+.modalCreateFolder button {
+  cursor: pointer;
+}
+.modalUploadFile {
+  padding: 5px;
+}
+.modalUploadFile input {
+  display: none;
+}
+.modalUploadFile label {
+  cursor: pointer;
+  background-color: #222831;
+  padding: 5px;
+}
+.modalUploadFile button {
+  cursor: pointer;
 }

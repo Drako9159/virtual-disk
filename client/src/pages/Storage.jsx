@@ -1,6 +1,7 @@
 import Directories from "../components/storage/Directories";
 import Nav from "../components/nav/Nav";
 import Modal from "../components/modal/Modal";
+import Actions from "../components/actions/Actions";
 
 export default function Storage() {
   return (
@@ -8,6 +9,7 @@ export default function Storage() {
       <Nav />
       <Modal />
       <Directories />
+      <Actions />
     </>
   );
 }

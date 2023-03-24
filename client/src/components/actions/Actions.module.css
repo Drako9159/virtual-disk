@@ -1,0 +1,49 @@
+.container {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+}
+.buttonAction {
+  background-color: #f96d00;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconMenu {
+  width: 40px;
+}
+.options {
+  background-color: #222831;
+  width: 120px;
+  position: relative;
+  top: -70px;
+  left: -30px;
+  border-radius: 20% 20% 20% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.options button {
+  padding: 7px;
+  background-color: #222831;
+  width: 120px;
+  border: none;
+  cursor: pointer;
+}
+
+.toast{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-weight: bold;
+}

@@ -7,6 +7,7 @@ export default function Nav() {
   const navs = useDirectoriesStore((state) => state.navs);
   const setNavs = useDirectoriesStore((state) => state.setNavs);
   const setDirectories = useDirectoriesStore((state) => state.setDirectories);
+  const setTypeModal = useDirectoriesStore((state) => state.setTypeModal);
   //let renderNavs = navs.map((nav) => nav + " / ");
 
   function handleClick() {
@@ -22,12 +23,24 @@ export default function Nav() {
       setDirectories({ directories: response.data.data })
     );
     setNavs({ navs: removerLast });
+    setTypeModal({
+      typeModal: {
+        type: "",
+        show: false,
+      },
+    });
   }
 
   function handleRefresh() {
     getDirectories().then((response) => {
       setDirectories({ directories: response.data.data });
       setNavs({ navs: "" });
+    });
+    setTypeModal({
+      typeModal: {
+        type: "",
+        show: false,
+      },
     });
   }
 

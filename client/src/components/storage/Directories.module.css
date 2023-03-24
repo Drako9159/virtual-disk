@@ -1,9 +1,9 @@
 .container {
-  background-color: #393e46;
+  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
-   
+   color: #222831;
   width: 100%;
   margin: 0 auto;
 }
@@ -14,7 +14,7 @@
   
 }
 .container .directory {
-  background-color: #8181816c;
+  background-color: #c0c0c06c;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,7 @@
   width: 100px;
   margin: 5px;
   padding: 10px;
+  height: 140px;
 }
 
 .container .directory:hover {

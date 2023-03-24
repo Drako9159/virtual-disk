@@ -7,7 +7,8 @@ export default function Directories() {
   const directories = useDirectoriesStore((state) => state.directories);
   const setDirectories = useDirectoriesStore((state) => state.setDirectories);
   const setNavs = useDirectoriesStore((state) => state.setNavs);
-  const navs = useDirectoriesStore((state) => state.navs);
+  const setFileInfo = useDirectoriesStore((state) => state.setFileInfo);
+  const setTypeModal = useDirectoriesStore((state) => state.setTypeModal);
 
   useEffect(() => {
     async function api() {
@@ -22,9 +23,24 @@ export default function Directories() {
     api();
   }, []);
 
-  async function handleClick(path) {
+  async function handleClick(path, directory) {
+    if (directory.type !== "folder") {
+      setFileInfo({
+        fileInfo: {
+          file: directory.name,
+          size: directory.size,
+          type: directory.type,
+        },
+      });
+      setTypeModal({
+        typeModal: {
+          type: "fileInfo",
+          show: true,
+        },
+      });
+      return;
+    }
     setNavs({ navs: path });
-
     try {
       await entryFolder(path).then((response) =>
         setDirectories({ directories: response.data.data })
@@ -32,6 +48,13 @@ export default function Directories() {
     } catch (error) {
       console.log(error);
     }
+    
+      setTypeModal({
+        typeModal: {
+          type: "",
+          show: false,
+        },
+      });
   }
   if (directories.length === 0)
     return <div className={styles.container}>empty</div>;
@@ -43,7 +66,7 @@ export default function Directories() {
           <div
             key={directory.id}
             className={styles.directory}
-            onClick={() => handleClick(directory.path)}
+            onClick={() => handleClick(directory.path, directory)}
           >
             <div className={styles.directoryImg}>
               <img
