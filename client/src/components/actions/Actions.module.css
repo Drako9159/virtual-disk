@@ -14,8 +14,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px 0 #616161;
+  
 }
-
+.buttonAction:hover {
+    transition: box-shadow .3s ease;
+    box-shadow: 0 0 10px 0 #000000;
+}
 .iconMenu {
   width: 40px;
 }
@@ -30,6 +35,11 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
+  animation:options .3s ease;
+}
+@keyframes options {
+    0%{max-height: 0;}
+    100%{max-height: 500px;}
 }
 .options button {
   padding: 7px;
@@ -39,11 +49,3 @@
   cursor: pointer;
 }
 
-.toast{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    font-weight: bold;
-}

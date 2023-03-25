@@ -38,6 +38,13 @@ export default function Directories() {
           show: true,
         },
       });
+      const element = document.querySelector("#modal")
+      //const element = document.getElementById('section-1');
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+      
       return;
     }
     setNavs({ navs: path });
@@ -57,7 +64,7 @@ export default function Directories() {
       });
   }
   if (directories.length === 0)
-    return <div className={styles.container}>empty</div>;
+    return <div className={styles.containerEmpty}>empty</div>;
 
   return (
     <div className={styles.container}>

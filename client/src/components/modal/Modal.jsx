@@ -67,7 +67,7 @@ export default function Modal() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="modal">
       {typeModal.show && typeModal.type === "fileInfo" ? (
         <div>
           <div className={styles.modalInfo}>
