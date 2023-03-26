@@ -38,13 +38,10 @@ export default function Directories() {
           show: true,
         },
       });
-      const element = document.querySelector("#modal")
-      //const element = document.getElementById('section-1');
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-      
+      const element = document.querySelector("#modal");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
       return;
     }
     setNavs({ navs: path });
@@ -55,13 +52,13 @@ export default function Directories() {
     } catch (error) {
       console.log(error);
     }
-    
-      setTypeModal({
-        typeModal: {
-          type: "",
-          show: false,
-        },
-      });
+
+    setTypeModal({
+      typeModal: {
+        type: "",
+        show: false,
+      },
+    });
   }
   if (directories.length === 0)
     return <div className={styles.containerEmpty}>empty</div>;

@@ -6,13 +6,13 @@ import {
   getDownload,
   createFolder,
 } from "../controllers/storage.controller.js";
+import { syncMoviesInfo } from "../controllers/movies.controller.js";
 const router = Router();
 
-import path from "node:path"
+import path from "node:path";
 router.get("/site", (req, res) => {
   res.sendFile(path.join(process.cwd() + "/client/dist", "index.html"));
- //res.send({ message: "listo" });
-
+  //res.send({ message: "listo" });
 });
 
 /*
@@ -25,6 +25,8 @@ router.get("/storage", getDirectories);
 router.get("/storage/icons", getIcons);
 
 router.get("/storage/download", getDownload);
+
+router.get("/storage/movies", syncMoviesInfo);
 
 router.post("/storage", createFolder);
 
