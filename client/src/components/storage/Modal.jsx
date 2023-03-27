@@ -1,4 +1,5 @@
 import styles from "./Modal.module.css";
+const HOST = import.meta.env.VITE_BACKEND_HOST;
 import { useDirectoriesStore } from "../../store/storage";
 import { useState } from "react";
 import ChargeAnimation from "../../pages/ChargeAnimation";
@@ -81,7 +82,7 @@ export default function Modal() {
             <div className={styles.right}>
               <a
                 target="_blank"
-                href={`http://192.168.1.207:5000/api/storage/download?file=${
+                href={`${HOST}/storage/download?file=${
                   navs + fileInfo.file
                 }`}
                 className={styles.buttonDownload}

@@ -76,8 +76,11 @@ export async function checkExist(file) {
 export function sendDownload(file) {
   const mimeType = mime.lookup(getPath("pathSingleDirectories", file));
   const filename = path.basename(getPath("pathSingleDirectories", file));
+  const stats = fs.statSync(getPath("pathSingleDirectories", file));
+  const itemSize = stats.size;
   const head = {
     "Content-Type": mimeType,
+    "Content-Length": itemSize,
     "Content-Disposition": "attachment; filename=" + filename,
     "Content-Disposition": "inline; filename=" + filename,
   };

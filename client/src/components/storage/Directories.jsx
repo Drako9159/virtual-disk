@@ -1,4 +1,5 @@
 import styles from "./Directories.module.css";
+const HOST = import.meta.env.VITE_BACKEND_HOST;
 import { useEffect } from "react";
 import { getDirectories, entryFolder } from "../../api/storage";
 import { useDirectoriesStore } from "../../store/storage";
@@ -74,7 +75,7 @@ export default function Directories() {
           >
             <div className={styles.directoryImg}>
               <img
-                src={`http://192.168.1.207:5000/api/storage/icons?format=${directory.icon_path}`}
+                src={`${HOST}/storage/icons?format=${directory.icon_path}`}
                 alt={directory.name}
               ></img>
             </div>

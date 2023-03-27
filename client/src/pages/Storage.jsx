@@ -1,7 +1,7 @@
 import Directories from "../components/storage/Directories";
-import Nav from "../components/nav/Nav";
-import Modal from "../components/modal/Modal";
-import Actions from "../components/actions/Actions";
+import Nav from "../components/storage/Nav";
+import Modal from "../components/storage/Modal";
+import Actions from "../components/storage/Actions";
 
 export default function Storage() {
   return (

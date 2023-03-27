@@ -1,5 +1,5 @@
 import styles from "./Nav.module.css";
-
+const HOST = import.meta.env.VITE_BACKEND_HOST;
 import { useDirectoriesStore } from "../../store/storage";
 import { getDirectories, entryFolder } from "../../api/storage";
 
@@ -48,7 +48,7 @@ export default function Nav() {
     <div className={styles.container}>
       <img
         className={styles.storageIcon}
-        src="http://192.168.1.207:5000/api/storage/icons?format=storage.svg"
+        src={`${HOST}/storage/icons?format=storage.svg`}
         alt="storage"
         onClick={() => handleRefresh()}
       />

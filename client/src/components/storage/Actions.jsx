@@ -2,7 +2,7 @@ import styles from "./Actions.module.css";
 import iconMenu from "../../assets/icons/menu.svg";
 import { useState } from "react";
 import { useDirectoriesStore } from "../../store/storage";
-import Feedback from "../feedback/Feedback";
+import Feedback from "./Feedback";
 export default function Actions() {
   const [showOptions, setShowOptions] = useState(false);
   const feedback = useDirectoriesStore((state) => state.feedback);

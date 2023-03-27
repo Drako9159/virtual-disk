@@ -1,8 +1,8 @@
-import axios from "axios"
-//const URL = import.meta.env.VITE_BACKEND
-const URL = "http://192.168.1.207:5000/api"
+import axios from "axios";
+
+const URL = import.meta.env.VITE_BACKEND_HOST;
 
 const api = axios.create({
-    baseURL: URL,
-})
+  baseURL: URL,
+});
 export default api;
