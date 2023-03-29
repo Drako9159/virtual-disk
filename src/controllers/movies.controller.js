@@ -39,9 +39,6 @@ export async function getVideo(req, res) {
 
 }
 
-
-
-
 export async function getPoster(req, res) {
   const { poster } = req.query;
   const data = await sendPoster(poster);
