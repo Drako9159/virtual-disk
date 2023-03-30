@@ -1,0 +1,73 @@
+[
+  {
+    "id": "e3bed886-c8da-4293-8abe-5c4b359ac65e",
+    "original_id": 787752,
+    "original_title": "Fresh",
+    "title": "Fresh",
+    "media_type": "movie",
+    "overview": "Thriller sobre los horrores de las citas modernas vistos a través de la desafiante batalla de una joven para sobrevivir a los inusuales apetitos de su nuevo novio.",
+    "release_date": "2022-03-03",
+    "poster_path": "/fQRRHBUsgJXCS3SUAv64W59DQGD.jpg",
+    "filename": "fresh.mp4",
+    "type": ".mp4",
+    "size": "1.06 GB",
+    "poster_url": "https://image.tmdb.org/t/p/w500"
+  },
+  {
+    "id": "a8aa16d7-c56b-4c20-931e-5c1ed874ac6b",
+    "original_id": 360784,
+    "original_title": "Hidden",
+    "title": "Hidden: Terror en Kingsville",
+    "media_type": "movie",
+    "overview": "301 días han pasado desde que Ray, Claire y su hija, Zoe encontrasen un refugio bajo tierra. Con nada que les distraiga de su propio miedo, se aferran a la esperanza de poder vivir algún día sobre la superficie como una familia normal. ¿Qué es lo que se cierne sobre la prisión de cemento a la que llaman hogar? Lo único que tienen seguro es que hay algo terrorífico y extraño que amenaza su frágil existencia, y va a por ellos.",
+    "release_date": "2015-09-15",
+    "poster_path": "/n4tv3GVt115IiZSV6sslEZe7fec.jpg",
+    "filename": "hidden_terror_en_kingsville.avi",
+    "type": ".avi",
+    "size": "672.68 MB",
+    "poster_url": "https://image.tmdb.org/t/p/w500"
+  },
+  {
+    "id": "cd1f8398-b6b4-4806-aeaf-08c1f1d2342b",
+    "original_id": 122906,
+    "original_title": "About Time",
+    "title": "Una cuestión de tiempo",
+    "media_type": "movie",
+    "overview": "La trama de la película gira en torno a un joven llamado Tim Lake. El protagonista y su familia tienen el curioso don de poder viajar a través del tiempo. Al descubrir esta cualidad, Tim empieza a beneficiarse de ello para cambiar diferentes aspectos de su vida. Se enamora de una chica, Mary, a la que conoce tras transladarse a vivir a Londres por motivos de trabajo. Su historia de amor se verá beneficiada gracias al don de Tim, sin embargo, el protagonista no tardará en darse cuenta de que su habilidad no es capaz de ampararle en algunos problemas y cuestiones familiares.",
+    "release_date": "2013-09-04",
+    "poster_path": "/u8k9KMzZGYgg2f5i8pKj23VMNPZ.jpg",
+    "filename": "cuestion_de_tiempo.ts",
+    "type": ".ts",
+    "size": "849.02 MB",
+    "poster_url": "https://image.tmdb.org/t/p/w500"
+  },
+  {
+    "id": "529927df-616a-431a-a124-8a5a81f112d3",
+    "original_id": 100088,
+    "original_name": "The Last of Us",
+    "name": "The Last of Us",
+    "media_type": "tv",
+    "overview": "Año 2023, veinte años después del comienzo de una plaga mundial que infectó a población con un hongo mutado transformando a las personas en unas criaturas caníbales, el contrabandista Joel tiene la misión de escoltar a la adolescente Ellie por un mundo postapocalíptico en el nada va a ser fácil para los viajeros.  Joel todavía vive atormentado por el recuerdo de su única hija. Ellie es portadora de algo que podría cambiar el destino de la humanidad ¿Conseguirán sobrevivir los dos?",
+    "first_air_date": "2023-01-15",
+    "poster_path": "/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg",
+    "filename": "the_last_of_us[1x9].ts",
+    "type": ".ts",
+    "size": "403.91 MB",
+    "episode": "1x9",
+    "poster_url": "https://image.tmdb.org/t/p/w500"
+  },
+  {
+    "id": "b04c2bf0-82cc-499b-a9b9-e82ebcf3e446",
+    "original_id": 207,
+    "original_title": "Dead Poets Society",
+    "title": "El club de los poetas muertos",
+    "media_type": "movie",
+    "overview": "En un elitista y estricto colegio privado de Nueva Inglaterra, un grupo de alumnos descubrirá la poesía, el significado de \"Carpe Diem\" -aprovechar el momento- y la importancia de perseguir los sueños, gracias a un excéntrico profesor que despierta sus mentes por medio de métodos poco convencionales.",
+    "release_date": "1989-06-02",
+    "poster_path": "/rP92uZg0Azxjk9Lj5juRA8TEMR5.jpg",
+    "filename": "sociedad_de_los_poetas_muertos.ts",
+    "type": ".ts",
+    "size": "1.06 GB",
+    "poster_url": "https://image.tmdb.org/t/p/w500"
+  }
+]
