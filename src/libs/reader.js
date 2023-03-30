@@ -24,15 +24,15 @@ async function readDirectories(seed, dir) {
 
 export async function sendIcons(icon = "") {
   if (icon === "") {
-    return  readDirectories("readIcons");
+    return await readDirectories("readIcons");
   } else {
     return getPath("pathIcons") + icon;
   }
 }
 
 export async function recoverData(dir = "") {
-  const folders =  readDirectories("readFolders", dir);
-  const icons = readDirectories("readIcons");
+  const folders = await readDirectories("readFolders", dir);
+  const icons = await readDirectories("readIcons");
 
   let data = [];
   folders.forEach((e) => {
