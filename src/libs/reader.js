@@ -4,42 +4,39 @@ import handleFormatBytes from "../utils/handleFormatBytes.js";
 import mime from "mime-types";
 import { v4 as uuidv4 } from "uuid";
 // get path for reader
+const PATH_ICONS = path.join(process.cwd(), `./src/assets/iconsFormat/`);
+const PATH_FOLDERS = path.join(process.cwd(), `./src/storage/`);
 
 function getPath(seed, dir = "") {
   const library = {
     pathSingleDirectories: path.join(process.cwd(), `./src/storage/${dir}/`),
-    pathIcons: path.join(process.cwd(), `./src/assets/iconsFormat/`),
   };
-  return library[seed].replace(/\\/gi, "/");
+  return library[seed];
 }
 
 async function readIcons() {
-  return fs.readdirSync(getPath("pathIcons"));
+  return fs.readdirSync(PATH_ICONS);
 }
-
-async function readFolders(dir = "") {
-  return fs.readdirSync(getPath("pathSingleDirectories", dir));
+async function readFolder(dir = "") {
+  return fs.readdirSync(PATH_FOLDERS + dir);
 }
 
 export async function sendIcons(icon = "") {
   if (icon === "") {
     return await readIcons();
   } else {
-    return getPath("pathIcons") + icon;
+    return readIcons() + icon;
   }
 }
 
 export async function recoverData(dir = "") {
-  const folders = await readFolders(dir);
+  const folders = await readFolder(dir);
   const icons = await readIcons();
-
   let data = [];
   folders.forEach((e) => {
-    //const suPath = getPath("pathSingleDirectories", dir + e)
-    const stats = fs.statSync(getPath("pathSingleDirectories", dir + e));
-    const pathName = path
-      .extname(getPath("pathSingleDirectories", dir + e))
-      .toLowerCase();
+    const stats = fs.statSync(PATH_FOLDERS + dir + "/" + e);
+
+    const pathName = path.extname(PATH_FOLDERS + dir + "/" + e).toLowerCase();
     const haveIcon = pathName.split(".")[1] + ".png";
 
     let push = {};
@@ -51,7 +48,7 @@ export async function recoverData(dir = "") {
         size: handleFormatBytes(stats.size),
         type: "folder",
         icon_path: "folder-fill.svg",
-        path: dir + e + "/",
+        path: dir + "/" + e + "/",
       };
     } else {
       push = {
@@ -61,7 +58,7 @@ export async function recoverData(dir = "") {
         size: handleFormatBytes(stats.size),
         type: pathName,
         icon_path: icons.includes(haveIcon) ? haveIcon : "file.svg",
-        path: dir + e + "/",
+        path: dir + "/" + e + "/",
       };
     }
     data.push(push);
@@ -69,13 +66,13 @@ export async function recoverData(dir = "") {
   return data;
 }
 export async function checkExist(file) {
-  return fs.existsSync(getPath("pathSingleDirectories", file));
+  return fs.existsSync(PATH_FOLDERS + file);
 }
 
 export function sendDownload(file) {
-  const mimeType = mime.lookup(getPath("pathSingleDirectories", file));
-  const filename = path.basename(getPath("pathSingleDirectories", file));
-  const stats = fs.statSync(getPath("pathSingleDirectories", file));
+  const mimeType = mime.lookup(PATH_FOLDERS + file);
+  const filename = path.basename(PATH_FOLDERS + file);
+  const stats = fs.statSync(PATH_FOLDERS + file);
   const itemSize = stats.size;
   const head = {
     "Content-Type": mimeType,
@@ -83,12 +80,10 @@ export function sendDownload(file) {
     "Content-Disposition": "attachment; filename=" + filename,
     "Content-Disposition": "inline; filename=" + filename,
   };
-  const filestream = fs.createReadStream(
-    getPath("pathSingleDirectories", file)
-  );
+  const filestream = fs.createReadStream(PATH_FOLDERS + file);
   return { head, filestream };
 }
 
 export async function mkdirFolder(folder) {
-  fs.mkdirSync(getPath("pathSingleDirectories", folder));
+  fs.mkdirSync(PATH_FOLDERS + folder);
 }
