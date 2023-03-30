@@ -13,26 +13,25 @@ function getPath(seed, dir = "") {
   return library[seed].replace(/\\/gi, "/");
 }
 
-// apply reader
-async function readDirectories(seed, dir) {
-  const library = {
-    readIcons: fs.readdirSync(getPath("pathIcons")),
-    readFolders: fs.readdirSync(getPath("pathSingleDirectories", dir)),
-  };
-  return library[seed];
+async function readIcons() {
+  return fs.readdirSync(getPath("pathIcons"));
+}
+
+async function readFolders(dir = "") {
+  return fs.readdirSync(getPath("pathSingleDirectories", dir));
 }
 
 export async function sendIcons(icon = "") {
   if (icon === "") {
-    return await readDirectories("readIcons");
+    return await readIcons();
   } else {
     return getPath("pathIcons") + icon;
   }
 }
 
 export async function recoverData(dir = "") {
-  const folders = await readDirectories("readFolders", dir);
-  const icons = await readDirectories("readIcons");
+  const folders = await readFolders(dir);
+  const icons = await readIcons();
 
   let data = [];
   folders.forEach((e) => {
