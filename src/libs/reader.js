@@ -7,13 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 const PATH_ICONS = path.join(process.cwd(), `./src/assets/iconsFormat/`);
 const PATH_FOLDERS = path.join(process.cwd(), `./src/storage/`);
 
-function getPath(seed, dir = "") {
-  const library = {
-    pathSingleDirectories: path.join(process.cwd(), `./src/storage/${dir}/`),
-  };
-  return library[seed];
-}
-
 async function readIcons() {
   return fs.readdirSync(PATH_ICONS);
 }
@@ -25,7 +18,7 @@ export async function sendIcons(icon = "") {
   if (icon === "") {
     return await readIcons();
   } else {
-    return readIcons() + icon;
+    return PATH_ICONS + icon;
   }
 }
 
