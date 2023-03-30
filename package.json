@@ -9,7 +9,7 @@
     "dev": "nodemon index.js",
     "dev-client": "cd client && npm run dev",
     "build-client": "cd client && npm run build",
-    "start": "cd client && echo VITE_BACKEND_HOST=http://192.168.1.207:4000/api > .env && npm run build && cd .. && echo BACKEND_PORT=4000 > .env && node index.js"
+    "start": "cd client && echo VITE_BACKEND_HOST=http://localhost:3000/api > .env && npm run build && cd .. && echo BACKEND_PORT=3000 > .env && node index.js"
   },
   "author": "@drako9159",
   "license": "MIT",

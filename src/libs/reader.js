@@ -19,20 +19,20 @@ async function readDirectories(seed, dir) {
     readIcons: fs.readdirSync(getPath("pathIcons")),
     readFolders: fs.readdirSync(getPath("pathSingleDirectories", dir)),
   };
-  return await library[seed];
+  return library[seed];
 }
 
 export async function sendIcons(icon = "") {
   if (icon === "") {
-    return await readDirectories("readIcons");
+    return  readDirectories("readIcons");
   } else {
     return getPath("pathIcons") + icon;
   }
 }
 
 export async function recoverData(dir = "") {
-  const folders = await readDirectories("readFolders", dir);
-  const icons = await readDirectories("readIcons");
+  const folders =  readDirectories("readFolders", dir);
+  const icons = readDirectories("readIcons");
 
   let data = [];
   folders.forEach((e) => {
