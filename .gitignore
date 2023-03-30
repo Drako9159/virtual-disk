@@ -1,4 +1,4 @@
 node_modules
 client/node_modules
-src/storage/.
-src/databases/.
+src/storage/**
+src/databases/**
