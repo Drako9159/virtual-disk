@@ -49,6 +49,7 @@ export async function getIcons(req, res) {
   }
 }
 
+
 export async function getDownload(req, res) {
   const { file } = req.query;
   if (await checkExist(file)) {
